@@ -1,3 +1,21 @@
+echo '
+
+                                                (  ) (@@) ( )  (@)  ()    @@    O     @     O     @      O
+                                           (@@@)
+                                       (    )
+                                    (@@@@)
+
+                                  (   )
+                                  _______  < HELLO WORLD !!
+                                /:::::::::\   ______
+                            ( \/::::::::::::\/     _)
+                             (|::_A__A_:::::|    _)
+                              |:| O   O |:::|  _)
+                              l:( " _ " |:|:|_)
+                               l C --C  l:|:|
+                                l:/\     l:/ )
+                                    `~U^^^U~/
+'
 export XDG_CONFIG_HOME="$HOME/.config"
 ########################################
 # 環境変数
@@ -83,6 +101,7 @@ setopt auto_cd
 
 # cd したら自動的にpushdする
 setopt auto_pushd
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
 
@@ -118,6 +137,14 @@ alias sudo='sudo '
 
 ############################################
 
+# C-rでfzf検索
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  CURSOR=$#BUFFER
+}
+zle -N select-history
+bindkey '^r' select-history
+
 # Shift-Tabで補完候補を逆順する（"\e[Z"でも動作する）
 bindkey "^[[Z" reverse-menu-complete
 
@@ -129,13 +156,9 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
-# load .zshrc_*
-[ -f $ZDOTDIR/.zshrc_`uname`     ] && . $ZDOTDIR/.zshrc_`uname`
-[ -f $ZDOTDIR/.zshrc_external    ] && . $ZDOTDIR/.zshrc_external
-[ -f $ZDOTDIR/.zshrc_alias       ] && . $ZDOTDIR/.zshrc_alias
-[ -f $ZDOTDIR/.zshrc_misc        ] && . $ZDOTDIR/.zshrc_misc
-[ -f $ZDOTDIR/.zshrc_local       ] && . $ZDOTDIR/.zshrc_local
-[ -f $ZDOTDIR/.zshrc_function    ] && . $ZDOTDIR/.zshrc_function
 alias ctags=/usr/local/Cellar/ctags/5.8_1/bin/ctags
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
