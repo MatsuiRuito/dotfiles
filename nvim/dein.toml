@@ -1,0 +1,176 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# ==========================================================
+# color
+# ==========================================================
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/iceberg.rc.vim
+'''
+
+# ==========================================================
+# basic
+# ==========================================================
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+source ~/.config/nvim/plugins/nerdcomenter.rc.vim
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''
+source ~/.config/nvim/plugins/anzu.rc.vim
+'''
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/yankround.rc.vim
+'''
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# ==========================================================
+# linter
+# ==========================================================
+
+[[plugins]]
+repo = 'neomake/neomake'
+if = "has('nvim')"
+hook_add = '''
+source ~/.config/nvim/plugins/neomake.rc.vim
+'''
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+if = "!has('nvim')"
+hook_add = '''
+source ~/.config/nvim/plugins/syntastic.rc.vim
+'''
+
+[[plugins]]
+repo = 'mtscout6/syntastic-local-eslint.vim'
+if = "!has('nvim')"
+depends = 'syntastic'
+on_ft = 'javascript'
+
+# ==========================================================
+# filer
+# ==========================================================
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_post_source = '''
+source ~/.config/nvim/plugins/denite.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+depends = 'denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/unite.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.nvim'
+hook_add = '''
+source ~/.config/nvim/plugins/vimfiler.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+depends = 'unite.nvim'
+
+# ==========================================================
+# powerline
+# ==========================================================
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+source ~/.config/nvim/plugins/tagbar.rc.vim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['tagbar', 'vim-fugitive']
+hook_add = '''
+source ~/.config/nvim/plugins/airline.rc.vim
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+depends = 'vim-airline'
+hook_add = '''
+let g:airline_theme='luna'
+'''
+
+[[plugins]]
+repo = 'gcmt/taboo.vim'
+depends = 'vim-airline'
+hook_add = '''
+"set guioptions-=e
+"set sessionoptions+=tabpages,globals
+let g:taboo_tab_format=' %N %f%m %w '
+'''
+
+# ==========================================================
+# terminal
+# ==========================================================
+
+[[plugins]]
+repo = 'kassio/neoterm'
+if = "has('nvim')"
+hook_add = '''
+source ~/.config/nvim/plugins/neoterm.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/vimshell'
+if = "!has('nvim')"
+hook_add = '''
+source ~/.config/nvim/plugins/vimshell.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+if = "has('nvim')"
+build = 'make'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+# ==========================================================
+# nyaovim
+# ==========================================================
+
+[[plugins]]
+repo = 'rhysd/neovim-component'
+
+[[plugins]]
+repo = 'rhysd/nyaovim-markdown-preview'
+
+[[plugins]]
+repo = 'rhysd/nyaovim-popup-tooltip'
+
+[[plugins]]
+repo = 'rhysd/nyaovim-mini-browser'
