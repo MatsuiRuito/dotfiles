@@ -3,26 +3,39 @@ nmap <Down> <C-w>j
 nmap <Up> <C-w>k
 nmap <Left> <C-w>h
 nmap <Right> <C-w>l
+noremap <S-h>   ^
+noremap <S-j>   }
+noremap <S-k>   {
+noremap <S-l>   $
+
 "hide hlsearch
 nnoremap <silent><Esc><Esc> :<C-u>nohlsearch<CR>
+
 "vertical size adjust '<' '>'
 nnoremap <silent>< <C-w><
 nnoremap <silent>> <C-w>>
+
 "horizonal size adjust '+' '-'
 noremap <silent>+ <C-w>+
 noremap <silent>- <C-w>-
+
 " Y => y$
 nnoremap Y y$
+
 " tabnew mapping : tn
 nnoremap <silent> tn :<C-u>tabnew<CR>
+
 " very magic
 nnoremap /  /\v
+
 " vimdiff => :Diff
 command! -nargs=1 -complete=file Diff vertical diffsplit <args>
+
 " terminal mode
 if has('nvim')
   tnoremap <silent> <ESC> <C-\><C-n>
 endif
+
 " Tab jump
 noremap t1 1gt
 noremap t2 2gt

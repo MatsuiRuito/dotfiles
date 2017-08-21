@@ -26,6 +26,7 @@ alias la 'ls -a'
 alias ll 'ls -l'
 alias g 'git'
 
+alias toggl 'python /Applications/toggl-cli/toggl.py'
 alias vi 'nvim'
 alias nya 'nyaovim'
 alias findf "find ./ -type f -print | xargs grep $1"

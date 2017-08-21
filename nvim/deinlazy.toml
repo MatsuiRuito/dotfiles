@@ -47,6 +47,9 @@ on_ft = ['vim', 'html', 'toml']
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
 
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+
 # ==========================================================
 # lang
 # ==========================================================
@@ -83,9 +86,9 @@ on_ft = 'javascript'
 repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 
-[[plugins]]
-repo = 'dag/vim-fish'
-on_ft = 'fish'
+#[[plugins]]
+#repo = 'dag/vim-fish'
+#on_ft = 'fish'
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
