@@ -44,12 +44,6 @@ repo = 'osyo-manga/vim-precious'
 depends = 'context_filetype.vim'
 on_ft = ['vim', 'html', 'toml']
 
-[[plugins]]
-repo = 'AndrewRadev/switch.vim'
-
-[[plugins]]
-repo = 'terryma/vim-multiple-cursors'
-
 # ==========================================================
 # lang
 # ==========================================================

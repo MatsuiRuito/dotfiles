@@ -2,6 +2,17 @@
 repo = 'Shougo/dein.vim'
 
 # ==========================================================
+# moe
+# ==========================================================
+
+[[plugins]]
+repo = 'thinca/vim-splash'
+
+[[plugins]]
+repo = 'amanoese/splash-julia'
+depends = ['thinca/vim-splash']
+
+# ==========================================================
 # color
 # ==========================================================
 
@@ -35,9 +46,6 @@ repo = 'LeafCage/yankround.vim'
 hook_add = '''
 source ~/.config/nvim/plugins/yankround.rc.vim
 '''
-
-[[plugins]]
-repo = 'rhysd/clever-f.vim'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -106,9 +114,6 @@ repo = 'majutsushi/tagbar'
 hook_add = '''
 source ~/.config/nvim/plugins/tagbar.rc.vim
 '''
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'

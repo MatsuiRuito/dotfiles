@@ -1,21 +1,21 @@
-echo '
-
-                                                (  ) (@@) ( )  (@)  ()    @@    O     @     O     @      O
-                                           (@@@)
-                                       (    )
-                                    (@@@@)
-
-                                  (   )
-                                  _______  < HELLO WORLD !!
-                                /:::::::::\   ______
-                            ( \/::::::::::::\/     _)
-                             (|::_A__A_:::::|    _)
-                              |:| O   O |:::|  _)
-                              l:( " _ " |:|:|_)
-                               l C --C  l:|:|
-                                l:/\     l:/ )
-                                    `~U^^^U~/
-'
+#echo '
+#
+#                                                (  ) (@@) ( )  (@)  ()    @@    O     @     O     @      O
+#                                           (@@@)
+#                                       (    )
+#                                    (@@@@)
+#
+#                                  (   )
+#                                  _______  < HELLO WORLD !!
+#                                /:::::::::\   ______
+#                            ( \/::::::::::::\/     _)
+#                             (|::_A__A_:::::|    _)
+#                              |:| O   O |:::|  _)
+#                              l:( " _ " |:|:|_)
+#                               l C --C  l:|:|
+#                                l:/\     l:/ )
+#                                    `~U^^^U~/
+#'
 export XDG_CONFIG_HOME="$HOME/.config"
 
 set -x TERM xterm-256color
@@ -34,8 +34,8 @@ alias findf "find ./ -type f -print | xargs grep $1"
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo 'sudo '
 
-# rmはゴミ箱へポイっ
-alias rm 'rmtrash'
+# thefuck
+thefuck --alias | source
 
 # rbenv
 set -x PATH $PATH "$HOME/.rbenv/shims"
